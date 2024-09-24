@@ -1,16 +1,17 @@
 const express = require("express");
-const {createTodo, getTodoById, updateTodo, getAllTodo, deleteTodo} = require("../controller/todoController");
+const {createTodo, updateTodo, getAllTodo, deleteTodo} = require("../controller/todoController");
+const { jwtAuthMiddleware } = require("../middlewares/jwt");
 
 const router = express.Router();
 
-router.post("/todos", createTodo);
+router.post("/", jwtAuthMiddleware,createTodo);
 
-router.get("/todos", getAllTodo);
+router.get("/", jwtAuthMiddleware, getAllTodo);
 
-router.get("/todos/:id", getTodoById);
+// router.get("/:id", jwtAuthMiddleware, getTodoById);
 
-router.put("/todos/:id", updateTodo);
+router.put("/:id", jwtAuthMiddleware, updateTodo);
 
-router.delete("/todos/:id", deleteTodo);
+router.delete("/:id", jwtAuthMiddleware, deleteTodo);
 
 module.exports = router;

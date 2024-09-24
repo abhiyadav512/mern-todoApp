@@ -8,6 +8,14 @@ body {
   font-family: Arial, sans-serif;
 }
 
+.top {
+  display: flex;
+  flex-direction: row;
+  gap: 4rem;
+  justify-content: space-between;
+  align-items: center;
+  width: 85vh;
+}
 .container {
   background-color: #333;
   color: #fff;
@@ -29,7 +37,7 @@ body {
   color: #333;
 }
 
-.gobtn:hover{
+.gobtn:hover {
   background-color: #fff;
 }
 
@@ -101,7 +109,10 @@ button:hover {
   input {
     font-size: 14px;
   }
-
+  .top {
+    width: 20rem;
+    font-size: small;
+  }
   button {
     font-size: 14px;
     padding: 8px 20px;
@@ -115,4 +126,76 @@ button:hover {
     gap: 20px;
     font-size: 14px;
   }
+}
+
+/*  login css */
+.login-form {
+  /* background: #000; */
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 5rem 0rem 5rem;
+  margin-top: 1rem;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.login-button {
+  margin-top: 15px;
+  background-color: #fff;
+  color: #333;
+}
+
+.login-input {
+  width: 40rem;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+.login-input:focus {
+  border-color: #333;
+  outline: none;
+}
+.login-button:hover {
+  margin-top: 15px;
+  background-color: #fff;
+  color: #333;
+}
+@media screen and (min-width: 1024px) {
+  .login-form {
+    padding: 5rem 7rem 0 7rem;
+    margin-top: 0rem;
+    /* width: 2rem; */
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .login-button {
+    font-size: 18px;
+    padding: 12px 30px;
+  }
+
+  .login-input {
+    max-width: 25rem;
+    font-size: 18px;
+    padding: 14px;
+  }
+}
+
+/* logout btn */
+.logout-button {
+  margin-top: 15px;
+  background-color: #fff; /* Red color for logout */
+  color: #333;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.login-button:hover {
+  background: #fff;
+  color: #333;
 }
